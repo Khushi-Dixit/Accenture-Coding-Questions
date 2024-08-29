@@ -27,3 +27,22 @@ The second largest element at the even position is 3.
 The second smallest element at the odd position is 4.
 The output is 7 (3 + 4).
  '''
+
+#solution
+
+def LargeSmallSum(arr):
+    if len(arr)<=3:
+        return 0
+    even_position=arr[::2]
+    odd_position=arr[1::2]
+    even=sorted(even_position,reverse=True)
+    odd=sorted(odd_position)
+    final=odd[1]+even[1]
+    return final
+arr=[3,2,1,7,5,4]
+print(LargeSmallSum(arr))
+
+
+
+
+

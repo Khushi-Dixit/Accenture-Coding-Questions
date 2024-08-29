@@ -28,3 +28,22 @@ n = 10
 Sample output:
 19
 '''
+
+
+#solution
+n=int(input())
+m=int(input())
+sum_m=0
+sum_n=0
+
+for i in range(n+1):
+    if i%m==0:
+        sum_m+=i
+    else:
+        sum_n+=i
+        
+   
+
+print(sum_n-sum_m)
+    
+

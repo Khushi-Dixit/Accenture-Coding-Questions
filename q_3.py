@@ -22,3 +22,38 @@ Listen and Silent are anagrams (an anagram is a word formed by rearranging the l
 '''
 
 #Solution
+def anagrams(input1, input2):
+    if len(input1) != len(input2):
+        print("No")
+        return
+    
+    count = 0
+    input2_list = list(input2)  # Convert input2 to a list to manipulate it
+
+    for i in input1:
+        if i in input2_list:
+            input2_list.remove(i)  # Remove the matched character from input2_list
+            count += 1
+    
+    if count == len(input1):
+        print("Yes")
+    else:
+        print("No")
+
+anagrams("Listen", "Silent")
+
+
+
+#Solution 2
+def anagrams(input1, input2):
+    # Convert both strings to lowercase to make the function case-insensitive
+    input1 = input1.lower()
+    input2 = input2.lower()
+
+    # Check if sorted versions of both strings are the same
+    if sorted(input1) == sorted(input2):
+        print("Yes")
+    else:
+        print("No")
+
+anagrams("Listen", "Silent")

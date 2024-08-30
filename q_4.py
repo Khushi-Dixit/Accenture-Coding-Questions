@@ -30,3 +30,21 @@ Arr: 9 8 –7 3 9 3
 Sample output:
 –21
 '''
+
+#Solution
+
+def Productsmallpair(sum,arr):
+    if len(arr)<2:
+        return -1
+    
+    l = list(set(arr))
+    l.sort()
+    if len(l) < 2:
+        return -1
+    checksum=l[0]+l[1]
+    if checksum<sum:
+        return(l[0]*l[1])
+    else:
+        return-1
+        
+print(Productsmallpair(9,[5,4,2,3,9,1,7]))
